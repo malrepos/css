@@ -66,3 +66,200 @@ A primer on CSS - using the CodeCademy course.
 ```
 <link href='./style.css' rel='stylesheet'>
 ```
+
+---
+
+## Selectors
+
+- selectors decide which element will get the style
+
+#### Type Selectors
+
+- the type selector matches the type of the element
+
+```
+p {
+  color: green;
+}
+```
+
+- in the is case the type selected is the <p> element
+- the type selector does not include the angle <> brackets
+- the type selector is sometimes referred to as tag name or element selector
+
+#### Universal Selectors
+
+- the universal selector selects all elements of any type
+- th euniversal selector uses \*
+
+```
+* {
+  font-family: Verdana;
+}
+```
+
+#### Class Selectors
+
+- HTML elements can have attributes
+
+```
+<p class='brand'>Sole Shoe Company</p>
+```
+
+- the above p element has a class atribute
+- we can select this element using a period prepended to the class name
+
+```
+.brand {
+
+}
+```
+
+#### Multiple Classes
+
+- it's possible to add more than one class name to an HTML element's class attribute
+
+```
+<h1 class='green bold'> ... </h1>
+```
+
+and then write two CSS rulesets:
+
+```
+.green {
+  color: green;
+}
+
+bold {
+  font-weight: bold;
+}
+```
+
+#### ID Selectors
+
+- an elements ID can only have a single value, and can only be used once
+- se prepend the ID name with #
+
+```
+#large-title {
+
+}
+```
+
+#### Attribute Selectors
+
+- the attribute sleector can be used to target HTML elements that already contain attributes
+
+```
+[href]{
+   color: magenta;
+}
+```
+
+- the above would target all href atributes
+- we can also target elements where the attribute contains any instance of a specific value
+
+```
+// say we have 2 images:
+
+<img src='/images/seasons/cold/winter.jpg'>
+<img src='/images/seasons/warm/summer.jpg'>
+
+// and we target each separately
+
+img[src*='winter'] {
+  height: 50px;
+}
+
+img[src*='summer'] {
+  height: 100px;
+}
+```
+
+#### Pseudo-Class
+
+- certain elements can change, or be in a different state, after certain interactions
+- a pseudo class can be added to any selector
+- :focus :visited :disabled :active are all pseudo classes
+- it is always written as a colon followed by a name
+
+```
+p:hover {
+  background-color: lime;
+}
+```
+
+- In the above code, whenever the mouse hovers over a paragraph element, that paragraph will have a lime-colored background.
+
+#### Classes and ID's
+
+- CSS classes and IDs have different purposes, which can affect which one you use to style HTML elements.
+- CSS classes are meant to be reused over many elements.
+- an ID is meant to style only one element
+- ID's override the styles of types and classes
+
+#### Specificity
+
+- Specificity is the order by which the browser decides which CSS styles will be displayed. A best practice in CSS is to style elements while using the lowest degree of specificity so that if an element needs a new style, it is easy to override.
+- IDs are the most specific selector in CSS, followed by classes, and finally, type.
+
+#### Chaining
+
+- it's possible to require an HTML element to have 2 or more CSS selectors at the same time
+- we combine multiple selectors : chaining
+
+```
+h1.special {
+
+}
+```
+
+- above we select only the H1 eleemnts with a class of special
+
+#### Descendant Combinator
+
+- CSS also supports selecting elements that are nested within other HTML elements, also known as descendants.
+
+```
+<ul class='main-list'>
+  <li> ... </li>
+  <li> ... </li>
+  <li> ... </li>
+</ul>
+
+// The nested <li> elements are descendants of the <ul> element
+
+.main-list li {
+
+}
+
+// we select the <li> elements by targeting forst the parent element class
+```
+
+#### Chaining and Specificity
+
+- Adding more than one tag, class, or ID to a CSS selector increases the specificity of the CSS selector.
+- if there is another rule that is more general, it will be overriden
+
+#### Ultiple Selectors
+
+- it’s possible to add CSS styles to multiple CSS selectors all at once. This prevents writing repetitive code.
+
+```
+// the following has repetetive code:
+
+h1 {
+  font-family: Georgia;
+}
+
+.menu {
+  font-family: Georgia;
+}
+
+// we can separate the selectors by a common to style both
+
+h1,
+.menu {
+  font-family: Georgia;
+}
+```
