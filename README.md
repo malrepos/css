@@ -130,7 +130,7 @@ and then write two CSS rulesets:
   color: green;
 }
 
-bold {
+.bold {
   font-weight: bold;
 }
 ```
@@ -263,3 +263,116 @@ h1,
   font-family: Georgia;
 }
 ```
+
+---
+
+# Visual Rules
+
+### Font Family
+
+- font-family property
+
+```
+h1 {
+  font-family: Garamond;
+}
+```
+
+- Web safe fonts are a group of fonts supported across most browsers and operating systems.
+- When the name of a typeface consists of more than one word, it’s a best practice to enclose the typeface’s name in quotes
+
+### Font Size
+
+- font-size property
+
+```
+p {
+  font-size: 18px;
+}
+```
+
+- px means pixels,a way to measure font size
+
+### Font Weight
+
+- font-weight property
+- controls how bold or thin text appears
+
+```
+p {
+  font-weight: bold;
+}
+```
+
+### Text Align
+
+- text will always appear on the left side of the container
+- text-align property will align text to the element that holds it (it's parent)
+
+```
+h1 {
+  text-align: right;
+}
+```
+
+- common values are
+  - left
+  - center
+  - right
+  - justify (spaces out text to align with right and left side of the parent element)
+
+### Color and Background Color
+
+- color can affect the following design aspects:
+  - foreground color
+  - background color
+- foreground color is the color that elements appear in
+- color: this property styles an element’s foreground color
+- background-color: this property styles an element’s background color
+
+```
+h1 {
+  color: red;
+  background-color: blue;
+}
+```
+
+### Opacity
+
+- opacity is the measure of how transparent an element is
+- It’s measured from 0 to 1, with 1 representing 100%, or fully visible and opaque, and 0 representing 0%, or fully invisible.
+
+```
+.overlay {
+  opacity: 0.5;
+}
+```
+
+### Background Image
+
+- we can make the background of an element an image
+- the value provided to background-image is a URL
+
+```
+.main-banner {
+  background-image: url('https://www.example.com/image.jpg');
+}
+```
+
+### Important
+
+- !important can be applied to specific declarations, instead of full rules
+- it will override any style no matter how specific it is
+- should almost never be used
+
+```
+p {
+  color: blue !important;
+}
+
+.main p {
+  color: red;
+}
+```
+
+- all elements will now appear blue, despite there being a more specific selector
